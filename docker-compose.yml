@@ -1,0 +1,19 @@
+version: '3'
+services:
+  firefox:
+    image: jlesage/firefox
+    environment:
+      - TZ=Asia/Hong_Kong
+      - DISPLAY_WIDTH=1920
+      - DISPLAY_HEIGHT=1080
+      - KEEP_APP_RUNNING=1
+      - ENABLE_CJK_FONT=1
+      - DARK_MODE=1
+      - FF_KIOSK=1
+      - VNC_PASSWORD=admin
+    ports:
+      - 5800:5800
+      # - 5900:5900
+    volumes:
+      - /docker/appdata/firefox:/config:rw
+    shm_size: '2g'
