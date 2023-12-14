@@ -17,3 +17,4 @@ services:
     volumes:
       - /docker/appdata/firefox:/config:rw
     shm_size: '2g'
+    restart: unless-stopped
