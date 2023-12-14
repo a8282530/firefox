@@ -25,7 +25,8 @@ EXPOSE 5800
 VOLUME ["/config"]
 
 
-RUN docker run -d --shm-size 2g --name firefox -p 5800:5800 -v /data/firefox/config:/config:rw firefox-image
+# RUN docker run -d --shm-size 2g --name firefox -p 5800:5800 -v /data/firefox/config:/config:rw firefox-image
+CMD ["docker run -d --shm-size 2g --name firefox -p 5800:5800 -v /data/firefox/config:/config:rw firefox-image"]
 # 设置容器的内存资源为2g
 # 这个选项不能在 Dockerfile 中设置，需要在运行 docker run 命令时设置
 # --shm-size 2g
